@@ -8,11 +8,6 @@ variable "instance_type" {
   
 }
 
-variable "cidr" {
-    description = "Insira o CIDR"
-    
-  
-}
 
 variable "security" {
     default = "sg_develop"
@@ -20,6 +15,6 @@ variable "security" {
 }
 
 variable "ec2name" {
-    default = "Leroy-Exam"
+    default = "My-ec2"
   
 }
