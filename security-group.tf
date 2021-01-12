@@ -2,13 +2,6 @@ resource "aws_security_group" "busybox" {
   name        = var.security
   description = "Regras para liberar portas"
 
-ingress {
-    description = "Endereco para liberar"
-    from_port   = 1337
-    to_port     = 1337
-    protocol    = "tcp"
-    cidr_blocks = [var.cidr]
-  }
 
 egress {
     from_port       = 80
@@ -23,6 +16,14 @@ egress {
     protocol        = "tcp"
     cidr_blocks     = ["0.0.0.0/0"]
   }
+ingress {
+    from_port       = 22
+    to_port         = 22
+    protocol        = "tcp"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+  
+ 
 
 
   tags = {
